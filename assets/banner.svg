@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="100%" height="100%">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#080D1A" />
+      <stop offset="50%" stop-color="#0F172A" />
+      <stop offset="100%" stop-color="#1E1035" />
+    </linearGradient>
+
+    <!-- Grid Pattern -->
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(56, 189, 248, 0.07)" stroke-width="1" />
+    </pattern>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="textGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="3" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <!-- Linear Gradients for Accent Orbs -->
+    <radialGradient id="cyanOrb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.4" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+
+    <radialGradient id="purpleOrb" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#A855F7" stop-opacity="0.35" />
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+
+  <style>
+    /* CSS Animations for Dynamic Aspects */
+    @keyframes gridSweep {
+      0% { transform: translateY(0px); }
+      100% { transform: translateY(40px); }
+    }
+
+    @keyframes pulseNode {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.4); opacity: 1; }
+    }
+
+    @keyframes floatOrb1 {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(30px, -20px); }
+    }
+
+    @keyframes floatOrb2 {
+      0%, 100% { transform: translate(0px, 0px); }
+      50% { transform: translate(-25px, 25px); }
+    }
+
+    @keyframes dashFlow {
+      0% { stroke-dashoffset: 100; }
+      100% { stroke-dashoffset: 0; }
+    }
+
+    .grid-bg { animation: gridSweep 8s linear infinite; }
+    .orb-1 { animation: floatOrb1 12s ease-in-out infinite; }
+    .orb-2 { animation: floatOrb2 15s ease-in-out infinite; }
+    .node-pulse { animation: pulseNode 3s ease-in-out infinite; transform-origin: center; }
+    .flow-line { stroke-dasharray: 8 12; animation: dashFlow 4s linear infinite; }
+  </style>
+
+  <!-- Base Canvas -->
+  <rect width="1200" height="300" fill="url(#bgGrad)" />
+
+  <!-- Animated Glowing Orbs in Background -->
+  <circle class="orb-1" cx="200" cy="80" r="180" fill="url(#cyanOrb)" />
+  <circle class="orb-2" cx="1000" cy="220" r="220" fill="url(#purpleOrb)" />
+
+  <!-- Spatial Grid Overlay -->
+  <rect width="1200" height="340" y="-20" fill="url(#grid)" class="grid-bg" />
+
+  <!-- Dynamic Network / Spatial Entity Connection Lines -->
+  <g stroke="rgba(56, 189, 248, 0.25)" stroke-width="1.5" fill="none">
+    <path d="M 100 220 Q 250 120 450 180 T 800 100 T 1100 200" class="flow-line" />
+    <path d="M 50 80 Q 300 240 600 140 T 950 250" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1.5" class="flow-line" style="animation-duration: 6s;" />
+  </g>
+
+  <!-- Spatial Node Dots (Background Entity Layer) -->
+  <g fill="#38BDF8">
+    <circle cx="250" cy="135" r="4" class="node-pulse" style="animation-delay: 0s;" />
+    <circle cx="450" cy="180" r="5" class="node-pulse" style="animation-delay: 0.8s;" fill="#A855F7" />
+    <circle cx="800" cy="100" r="4" class="node-pulse" style="animation-delay: 1.4s;" />
+    <circle cx="950" cy="250" r="5" class="node-pulse" style="animation-delay: 0.4s;" fill="#34D399" />
+    <circle cx="150" cy="230" r="3" class="node-pulse" style="animation-delay: 1.8s;" />
+  </g>
+
+  <!-- FOREGROUND TEXT CONTAINER (Ensured always on top and fully readable) -->
+  <g text-anchor="middle">
+    <!-- Main Title Glow Shadow -->
+    <text x="600" y="132" fill="#38BDF8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="900" letter-spacing="1" filter="url(#textGlow)" opacity="0.8">
+      AWESOME LARGE-SCALE SPATIAL SIMULATION
+    </text>
+
+    <!-- Main Title Foreground -->
+    <text x="600" y="130" fill="#FFFFFF" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="42" font-weight="900" letter-spacing="1">
+      AWESOME LARGE-SCALE SPATIAL SIMULATION
+    </text>
+
+    <!-- Decorative Accent Line below Title -->
+    <rect x="420" y="152" width="360" height="3" rx="1.5" fill="url(#cyanOrb)" opacity="0.9" />
+    <rect x="520" y="152" width="160" height="3" rx="1.5" fill="#38BDF8" filter="url(#glow)" />
+
+    <!-- Subtitle Text -->
+    <text x="600" y="195" fill="#94A3B8" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" font-size="18" font-weight="500" letter-spacing="2">
+      CITY-SCALE DIGITAL TWINS  •  AUTONOMOUS SYSTEMS  •  MULTI-AGENT ENGINES
+    </text>
+
+    <!-- Category Badges / Tags inside SVG -->
+    <g transform="translate(360, 222)">
+      <!-- Tag 1 -->
+      <rect x="0" y="0" width="130" height="26" rx="13" fill="rgba(56, 189, 248, 0.12)" stroke="rgba(56, 189, 248, 0.4)" stroke-width="1"/>
+      <text x="65" y="17" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="11" font-weight="600">GEOSPATIAL 3D</text>
+
+      <!-- Tag 2 -->
+      <rect x="145" y="0" width="190" height="26" rx="13" fill="rgba(168, 85, 247, 0.12)" stroke="rgba(168, 85, 247, 0.4)" stroke-width="1"/>
+      <text x="240" y="17" fill="#C084FC" font-family="system-ui, sans-serif" font-size="11" font-weight="600">AGENT-BASED MODELING</text>
+
+      <!-- Tag 3 -->
+      <rect x="350" y="0" width="130" height="26" rx="13" fill="rgba(52, 211, 153, 0.12)" stroke="rgba(52, 211, 153, 0.4)" stroke-width="1"/>
+      <text x="415" y="17" fill="#34D399" font-family="system-ui, sans-serif" font-size="11" font-weight="600">MULTIPHYSICS</text>
+    </g>
+  </g>
+</svg>
