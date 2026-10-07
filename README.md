@@ -60,7 +60,7 @@
 
 ## 🔓 Top Open-Source Spatial Simulation Engines
 
-*Repos are listed in descending order by GitHub Star count.* 🌟
+*Repos are listed in descending order by GitHub Stars_Count.* 🌟
 
 ### 1. [CesiumJS](https://github.com/CesiumGS/cesium) [![Stars](https://img.shields.io/github/stars/CesiumGS/cesium?style=social&color=white)](https://github.com/CesiumGS/cesium/stargazers)
 - 📜 **License**: Apache-2.0
@@ -179,7 +179,7 @@ Building custom large-scale spatial simulation architectures typically requires 
 
 Contributions are welcome! Please follow these simple guidelines:
 1. 🍴 **Fork the repository**.
-2. 📝 **Edit `README.md`** maintaining clean Markdown tables and shields.io star badges.
+2. 📝 **Edit `README.md`** maintaining clean Markdown tables and shields.io Stars_Badges.
 3. 🔎 **Ensure entries include** official documentation/repository links, factual descriptions, pricing/licensing details, and primary use cases.
 4. 🚀 **Submit a Pull Request** with a brief summary of additions or updates.
 
