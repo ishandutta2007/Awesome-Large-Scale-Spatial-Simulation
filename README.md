@@ -1,255 +1,180 @@
-# Awesome-Large-Scale-Spatial-Simulation
+# Awesome Large-Scale Spatial Simulation Ecosystem
 
-## Top Large-Scale Spatial Simulation Ecosystem
+[![Awesome](https://awesome.re/badge.svg)](https://awesome.re)
+[![Tracked Projects](https://img.shields.io/badge/Projects-20%2B-blue?style=flat-square)](https://github.com/ishandutta2007/Awesome-Large-Scale-Spatial-Simulation)
 
+> A curated directory of enterprise SaaS platforms and top open-source engines for **large-scale spatial simulation**, **city-scale digital twins**, **agent-based modeling (ABM)**, **autonomous vehicle testing**, and **geospatial 3D visualization**.
 
-
-**Curated List of SaaS Products & Open-Source GitHub Projects**
-
-*Focused on City-Scale Simulation, Digital Twins & Self-Hosted Spatial Engines*
-
-**Last updated: October 2026**
-
-
-
-This repository tracks notable **commercial large-scale spatial simulation platforms** and **open-source projects** that simulate millions of interacting entities across geographic space — powering urban planning, autonomous vehicle testing, disaster evacuation modeling, and digital twin research.
-
-
-
-**Examples** include AWS SimSpace Weaver, Bentley Systems iTwin, Cesium ion, Epic Games Unreal Engine Cloud, Unity Simulation Pro, Ansys Twin Builder, SimScale, AnyLogic Cloud, Siemens Simcenter, and Hexagon GeoMedia (the category leaders).
-
-
-
-**Open-source emphasis**: Large-scale spatial simulation is anchored by **Gazebo** and **CARLA** for robotics and autonomous vehicle testing, **City of Light (COL)** for city-scale urban simulation, **Concordia Simulation Builder** for generative agent-based social simulation, **OpenFOAM** for multiphysics simulation, **MuPIF** for distributed multiphysics workflows, **VILLASframework** for real-time co-simulation, and **OpenCourant** as the community fork of OpenRadioss for finite element analysis. **Potree** and **CesiumJS** handle point cloud and geospatial visualization. This section is heavily expanded.
-
-
-
-Contributions welcome! Open a PR to add/update entries. Keep descriptions factual and link to official sites.
-
-
+---
 
 ## Table of Contents
-
-- [SaaS/Hosted Platforms](#saas-hosted-platforms)
-
-- [Open-Source GitHub Projects](#open-source-github-projects)
-
+- [Market Overview & Ecosystem Dynamics](#market-overview--ecosystem-dynamics)
+- [Commercial & Enterprise SaaS Platforms](#commercial--enterprise-saas-platforms)
+- [Top Open-Source Spatial Simulation Engines](#top-open-source-spatial-simulation-engines)
+- [Framework Integration & Architecture Patterns](#framework-integration--architecture-patterns)
 - [How to Contribute](#how-to-contribute)
-
-- [Disclaimer](#disclaimer)
-
-
-
-## SaaS/Hosted Platforms
-
-
-
-- **[AWS SimSpace Weaver](https://aws.amazon.com/simspaceweaver/)**
-
-  **AWS's managed spatial simulation service** — distributed millions of entities across multiple servers for city-scale crowd simulation, traffic flow, and evacuation modeling . **Automatic spatial partitioning** splits simulation space into grid cells assigned to worker nodes, with transparent cross-boundary entity interaction handling . **Unreal Engine and Unity integration** for real-time 3D visualization with LOD control for rendering millions of entities . **Note**: Service **ended support May 20, 2026** — AWS recommends migrating containerized simulations to AWS Batch .
-
-
-
-- **[Bentley Systems iTwin](https://www.bentley.com/)**
-
-  **Infrastructure digital twin platform** — synchronized physical and digital infrastructure for AEC and utilities. **iTwin.js is available as open-source** and was identified as the best open-source option for net-zero manufacturing applications . **Best for infrastructure digital twins**.
-
-
-
-- **[Cesium ion](https://cesium.com/platform/cesium-ion/)**
-
-  **3D geospatial data streaming platform** — hosts and streams 3D Tiles, terrain, and imagery for large-scale geospatial visualization. **CesiumJS is open-source** for the viewer component, though storing and serving terrain to the viewer requires a paid subscription . **Best for geospatial visualization at scale**.
-
-
-
-- **[Epic Games Unreal Engine Cloud](https://www.unrealengine.com/)**
-
-  **Cloud deployment for Unreal Engine** — pixel streaming and cloud rendering for large-scale simulation visualization. **Unreal Engine is open-source** for the engine itself, with cloud services for deployment . **Best for high-fidelity simulation rendering**.
-
-
-
-- **[Unity Simulation Pro](https://unity.com/)**
-
-  **Cloud-based simulation at scale** — distributed simulation execution for robotics and autonomous systems. **Unity is not open-source** but well-documented with reasonable customizability when combined with open-source code . **Best for Unity-based simulation workflows**.
-
-
-
-- **[Ansys Twin Builder](https://www.ansys.com/)**
-
-  **Multiphysics digital twin platform** — build, validate, and deploy digital twins for complex systems . **Best for engineering digital twins**.
-
-
-
-- **[SimScale](https://www.simscale.com/)**
-
-  **Cloud-based simulation platform** — browser-accessible CFD and FEA with scalable computing resources . **Best for accessible cloud simulation**.
-
-
-
-- **[AnyLogic Cloud](https://www.anylogic.com/)**
-
-  **Multimethod simulation platform** — agent-based, discrete event, and system dynamics simulation in the cloud. **Best for business and social simulation**.
-
-
-
-- **[Siemens Simcenter](https://plm.sw.siemens.com/)**
-
-  **Simulation and test solutions** — integrated multiphysics simulation for product development. **Note**: Siemens acquired Altair and integrated Radioss into Simcenter, discontinuing the OpenRadioss open-source project . **Best for enterprise engineering simulation**.
-
-
-
-- **[Hexagon GeoMedia](https://www.hexagongeospatial.com/)**
-
-  **Geospatial intelligence platform** — GIS analysis and spatial data management . **Best for geospatial analysis workflows**.
-
-
-
-## Open-Source GitHub Projects
-
-
-
-### City-Scale Urban Simulation
-
-
-
-- **[City of Light (COL)](https://github.com/iliassarbout/CityOfLight)**
-
-  **City-scale, geo-anchored urban simulator for high-throughput embodied AI research**, open-source . **Covers ~116 km² of inner Paris** built from public GIS sources (OpenStreetMap, IGN, Paris Data) with per-tile meshes . **Four synchronized sensor modalities per frame**: RGB, depth, normals, and semantics . **TURBO Unity-Python bridge** streams multi-camera observations at up to **~1300 FPS** (RTX 4090), achieving higher throughput than ML-Agents . **Stochastic traffic and pedestrian flows** with configurable scenarios . **Street View Digital Twin** aligns simulator viewpoints with real-world panoramas for frame-accurate comparison . **Best for urban embodied AI and reinforcement learning research**.
-
-
-
-- **[Gazebo](https://github.com/gazebosim/gz-sim)**
-
-  **Open-source robotics simulator from Open Source Robotics Foundation**, Apache-2.0 licensed . **Default simulator in Robot Operating System (ROS)** with active community . **Supports multiple physics engines**: ODE, Bullet, SimBody, DART . **Modular architecture** with separate libraries for physics, rendering, UI, communication, and sensor generation . **UAV support includes quadrotors (Iris, Solo), hexarotors (Typhoon H480), and VTOL aircraft** . **Arena-Rosnav-3D** extends Gazebo with realistic dynamic 3D scenarios for ROS navigation benchmarking . **Best for robotics simulation and ROS integration**.
-
-
-
-### Generative Agent-Based Simulation
-
-
-
-- **[Concordia Simulation Builder](https://github.com/ngstcf/concordia-sim-builder)**
-
-  **No-code web interface for Google DeepMind's Concordia framework**, Apache-2.0 licensed . **38 ready-to-run templates** covering SDG research, game theory, cybersecurity, and policy analysis . **9-tab analytics dashboard** with batch runs, parameter sweeps, and CSV/JSON export . **8 LLM providers supported**: OpenAI, Azure OpenAI, Anthropic, Gemini, DeepSeek, GLM, and Ollama (local or remote) . **Automatic checkpoints with resume-and-extend workflow** . **Democratizes AI social simulation** by making generative agent-based modeling accessible without coding . **Best for social simulation and LLM-driven agent research**.
-
-
-
-### Autonomous Vehicle & Robotics Simulation
-
-
-
-- **[CARLA](https://github.com/carla-simulator/carla)**
-
-  **The leading open-source autonomous driving simulator**, MIT licensed with **14,000+ GitHub stars** . **Unreal Engine-based with realistic urban environments** . **Configurable sensor suites (LiDAR, cameras, radar, GNSS, IMU)** . **Vehicle dynamics based on NVIDIA PhysX engine** . **Python/C++ APIs with ROS bridge** . **Scenario runner for reproducible testing** . **Best for autonomous driving RL research**.
-
-
-
-- **[AWSIM](https://github.com/tier4/AWSIM)**
-
-  **Unity-based autonomous driving simulator from TIER IV**, Apache-2.0 licensed . **Designed as reference environment for Autoware** . **Native ROS 2 interface available** . **Trade-offs**: limited scenario library, no scaling features, smaller community . **Best for Autoware-native simulation**.
-
-
-
-### Multiphysics & Digital Twin Simulation
-
-
-
-- **[MuPIF](https://github.com/mupif/mupif)**
-
-  **Open-source, modular, object-oriented simulation platform for distributed multiphysics workflows**, LGPLv3 licensed . **Data Management System (DMS)** builds digital twin representations with full traceability . **Graphical Workflow Editor** for low-code workflow development . **Standardizes application and data component interfaces** for seamless integration of different simulation models . **HPC integration** for high computational needs . **SSL or VPN-based secure communication** . **Best for complex multiphysics digital twins**.
-
-
-
-- **[OpenFOAM](https://github.com/OpenFOAM/OpenFOAM-dev)**
-
-  **Open-source CFD framework with unrivaled customization potential**, GPL-3.0 licensed . **No direct software cost** but requires investment in skilled personnel . **Requires expert-tuned settings** to achieve stability comparable to commercial solvers . **Best for research teams implementing novel models**.
-
-
-
-- **[OpenCourant](https://github.com/OpenCourant/OpenCourant)**
-
-  **Community fork of OpenRadioss for finite element analysis**, GNU AGPLv3 licensed . **Continues the OpenRadioss project after Siemens discontinued it** following the Altair acquisition . **Created by Brian Clemens, founder of RESF (Rocky Enterprise Software Foundation)** . **Best for FEM simulation with open governance**.
-
-
-
-### Real-Time Co-Simulation
-
-
-
-- **[VILLASframework](https://github.com/VILLASframework)**
-
-  **Toolset for local and geographically distributed real-time co-simulation** . **Key components**: **VILLASnode** — open-source real-time multi-protocol gateway (C++, 15 stars) . **VILLASweb** — frontend for planning, controlling, monitoring, and analyzing distributed simulations (JavaScript, 3 stars) . **VILLAScontroller** — control and monitor simulation resources via AMQP/RabbitMQ (Python) . **VILLASsignaling** — WebSocket server for WebRTC signaling . **Best for distributed co-simulation workflows**.
-
-
-
-### Geospatial Visualization
-
-
-
-- **[Potree](https://github.com/potree/potree)**
-
-  **WebGL-based point cloud viewer for large datasets**, open-source . **Outperformed CesiumJS in weighted comparison** for point cloud visualization: higher scores for documentation, UI, out-of-the-box options, and ease of embedding . **Built on Three.js, CesiumJS, and D3.js** . **Simple to embed in websites** with iframe support . **Best for point cloud visualization**.
-
-
-
-- **[CesiumJS](https://github.com/CesiumGS/cesium)**
-
-  **Open-source JavaScript library for 3D geospatial visualization**, Apache-2.0 licensed . **3D Tiles and terrain streaming** — Cesium ion required for hosting terrain . **Strong documentation and measurement tools** . **Widely used for geospatial applications** . **Trade-off**: terrain hosting requires paid subscription . **Best for geospatial visualization on a globe**.
-
-
-
-### Additional Strong Open-Source Options
-
-
-
-- **Ignition (now Gazebo)** — Next-generation Gazebo with DART physics engine .
-
-- **Webots** — Open-source robot simulator with ROS 2 support .
-
-- **FlightGear** — Advanced open-source flight simulator with PX4 support .
-
-- **JSBSim** — Open-source flight dynamics model for aircraft and rockets .
-
-- **Open Simulation Platform (OSP)** — Maritime industry simulation platform from DNV GL, NTNU, Rolls-Royce, and SINTEF Ocean .
-
-
-
-**Frameworks for building custom large-scale spatial simulation solutions**: Combine **City of Light (COL)** for city-scale urban simulation with high-throughput multi-sensor streams . Use **Gazebo** for robotics simulation with ROS integration and multiple physics engines . Deploy **Concordia Simulation Builder** for generative agent-based social simulation with LLM providers . Choose **MuPIF** for distributed multiphysics digital twins with workflow editor . Integrate **VILLASframework** for real-time co-simulation across distributed resources . Use **Potree** or **CesiumJS** for geospatial visualization . Note that true enterprise large-scale spatial simulation with managed infrastructure, global scale, and vendor-supported SLAs (Bentley iTwin, Cesium ion, Ansys Twin Builder) remains primarily commercial territory; open-source stacks provide strong urban simulation, robotics testing, and multiphysics foundations that require integration for complete spatial simulation platforms.
-
-
+- [Disclaimer & License Notes](#disclaimer--license-notes)
+
+---
+
+## Market Overview & Ecosystem Dynamics
+
+**Estimated Market Size**: The global **Spatial Simulation and Digital Twin Market** is valued at **~$18.4 Billion in 2026** and is projected to reach **~$85 Billion by 2032**, growing at a CAGR of **~26.4%**.
+
+**Market Structure & Fragmentation**: The sector is **moderately fragmented**. Rather than being a single "winner-take-all" market, leadership is split across specialized domain niches:
+- **Multiphysics & Engineering Simulation**: Dominant leaders include *Siemens* and *Ansys*.
+- **AEC & Infrastructure Digital Twins**: Led by *Bentley Systems*.
+- **High-Fidelity Rendering & Game Engines**: Led by *Epic Games (Unreal Engine)* and *Unity*.
+- **3D Geospatial Data Streaming**: Led by *Cesium ion*.
+
+---
+
+## Commercial & Enterprise SaaS Platforms
+
+| Product / Platform | Description & Key Strengths | Est. Company Valuation / Revenue | Starting Price / Paid Tiers | Free Tier / Free Trial Limits |
+| :--- | :--- | :--- | :--- | :--- |
+| **[AWS SimSpace Weaver](https://aws.amazon.com/simspaceweaver/)** | Managed spatial simulation service for millions of entities across cloud nodes. *(Ended support May 20, 2026; migrate to AWS Batch)*. | **$2.1 Trillion Market Cap** ($100B+ AWS Rev) | **$0.15 / SimUnit / hour** (or AWS Batch EC2 starting ~$0.0104/hr) | **AWS Free Tier**: 750 EC2 compute hours/mo + 60-day $300 cloud credit |
+| **[Siemens Simcenter](https://plm.sw.siemens.com/)** | Predictive engineering multiphysics and system digital twin simulation platform. | **$150 Billion Market Cap** ($85B+ Annual Rev) | **$12,000 / year** per base 3D user license | **30-day Free Trial**: 10 free core-hours of Simcenter Cloud HPC |
+| **[Ansys Twin Builder](https://www.ansys.com/)** | Multiphysics digital twin & system-level simulation environment for industrial assets. | **$35 Billion Valuation** ($2.3B Annual Rev) | **$15,000 / year** per concurrent user license | **Free Student Edition**: Unlimited time, restricted to 512,000 mesh nodes |
+| **[Epic Games Unreal Engine Cloud](https://www.unrealengine.com/)** | Cloud pixel streaming & high-fidelity 3D rendering engine for spatial visualization. | **$31.5 Billion Valuation** ($5.8B Annual Rev) | **5% royalty** on gross revenue exceeding $1,000,000 per application | **Free Forever**: Full features free for projects under $1,000,000 gross revenue |
+| **[Hexagon GeoMedia](https://www.hexagongeospatial.com/)** | Enterprise geospatial intelligence, GIS data management, and spatial analysis platform. | **$30 Billion Market Cap** ($5.8B Annual Rev) | **$3,500 / year** per desktop/enterprise license | **14-day Free Trial**: Full access via Hexagon Geospatial Portal |
+| **[Bentley Systems iTwin](https://www.bentley.com/)** | Infrastructure digital twin platform for AEC, utilities, and smart urban modeling. | **$15 Billion Market Cap** ($1.2B Annual Rev) | **$500 / month** for iTwin Developer Commercial Plan | **Free Developer Plan**: 5 iTwin models, 1 GB storage, 1,000 API calls/month |
+| **[Unity Simulation Pro](https://unity.com/)** | Distributed cloud-based simulation platform for robotics, autonomous vehicles, and synthetic data. | **$9 Billion Market Cap** ($2.1B Annual Rev) | **$2,040 / user / year** (Unity Pro) + **$0.05 / core-hour** | **Unity Personal Free**: Free for entities < $100k revenue; 14-day Pro trial |
+| **[Cesium ion](https://cesium.com/platform/cesium-ion/)** | 3D geospatial data streaming platform for 3D Tiles, terrain, and high-scale globes. | **$15 Billion Parent Cap** (~$100M Standalone) | **$149 / month** (Commercial Tier, 100 GB storage / 500 GB streaming) | **Free Community Plan**: 5 GB storage, 50 GB/mo streaming, 1,000 uploads/mo |
+| **[SimScale](https://www.simscale.com/)** | Browser-accessible cloud CFD, FEA, and thermal simulation software. | **$150 Million Valuation** ($15M Annual Rev) | **$600 / month** ($7,200/year billed annually for Professional Plan) | **Free Community Plan**: 3,000 core-hours/year (public project storage) |
+| **[AnyLogic Cloud](https://www.anylogic.com/)** | Multimethod simulation engine (agent-based, discrete event, system dynamics) in the cloud. | **$80 Million Valuation** ($10M Annual Rev) | **$5,280 / year** per AnyLogic Professional license | **Free PLE (Personal Learning Edition)**: Free forever (up to 50,000 agents) |
+
+---
+
+## Top Open-Source Spatial Simulation Engines
+
+Repos are listed in descending order by GitHub Star count.
+
+### 1. [CesiumJS](https://github.com/CesiumGS/cesium) [![Stars](https://img.shields.io/github/stars/CesiumGS/cesium?style=social&color=white)](https://github.com/CesiumGS/cesium/stargazers)
+- **License**: Apache-2.0
+- **Category**: 3D Geospatial & Globe Visualization
+- **Overview**: An open-source JavaScript library for world-class 3D globes and map visualization. Supports 3D Tiles and terrain streaming for large-scale spatial datasets.
+
+### 2. [CARLA](https://github.com/carla-simulator/carla) [![Stars](https://img.shields.io/github/stars/carla-simulator/carla?style=social&color=white)](https://github.com/carla-simulator/carla/stargazers)
+- **License**: MIT
+- **Category**: Autonomous Driving Simulation
+- **Overview**: Leading open-source autonomous driving simulator built on Unreal Engine. Features flexible sensor suites (LiDAR, RGB, Radar, GNSS), dynamic weather, NVIDIA PhysX vehicle dynamics, and ROS integration.
+
+### 3. [Potree](https://github.com/potree/potree) [![Stars](https://img.shields.io/github/stars/potree/potree?style=social&color=white)](https://github.com/potree/potree/stargazers)
+- **License**: BSD-2-Clause
+- **Category**: Point Cloud & Geospatial Visualization
+- **Overview**: WebGL-based point cloud renderer for massive spatial datasets. Built on Three.js, supporting fast web embedding and interactive measurement tools.
+
+### 4. [Webots](https://github.com/cyberbotics/webots) [![Stars](https://img.shields.io/github/stars/cyberbotics/webots?style=social&color=white)](https://github.com/cyberbotics/webots/stargazers)
+- **License**: Apache-2.0
+- **Category**: Robotics & Agent Simulation
+- **Overview**: Full-featured open-source robot simulator providing a complete development environment to model, program, and simulate autonomous vehicles and robotic agents.
+
+### 5. [Eclipse SUMO](https://github.com/eclipse-sumo/sumo) [![Stars](https://img.shields.io/github/stars/eclipse-sumo/sumo?style=social&color=white)](https://github.com/eclipse-sumo/sumo/stargazers)
+- **License**: EPL-2.0
+- **Category**: Microscopic Urban Traffic Simulation
+- **Overview**: Highly portable, microscopic traffic simulation package designed to model large city road networks, intermodal traffic (vehicles, pedestrians, public transit), and route optimization.
+
+### 6. [Mesa](https://github.com/mesa/mesa) [![Stars](https://img.shields.io/github/stars/mesa/mesa?style=social&color=white)](https://github.com/mesa/mesa/stargazers)
+- **License**: Apache-2.0
+- **Category**: Agent-Based Modeling (ABM) Framework
+- **Overview**: Open-source Python library for agent-based modeling of spatial, economic, and social systems. Features built-in spatial grids, agent scheduling, and Jupyter visualization.
+
+### 7. [Project Chrono](https://github.com/projectchrono/chrono) [![Stars](https://img.shields.io/github/stars/projectchrono/chrono?style=social&color=white)](https://github.com/projectchrono/chrono/stargazers)
+- **License**: BSD-3-Clause
+- **Category**: Multibody Dynamics & Physics Engine
+- **Overview**: High-performance C++ multi-physics simulation engine for ground vehicle dynamics, granular material flows, and large-scale mechanical systems.
+
+### 8. [JSBSim](https://github.com/JSBSim-Team/jsbsim) [![Stars](https://img.shields.io/github/stars/JSBSim-Team/jsbsim?style=social&color=white)](https://github.com/JSBSim-Team/jsbsim/stargazers)
+- **License**: LGPL-2.1
+- **Category**: Flight Dynamics & Aerial Simulation
+- **Overview**: Open-source Flight Dynamics Model (FDM) software library that models the flight mechanics of aircraft, rockets, and spacecraft.
+
+### 9. [OpenFOAM](https://github.com/OpenFOAM/OpenFOAM-dev) [![Stars](https://img.shields.io/github/stars/OpenFOAM/OpenFOAM-dev?style=social&color=white)](https://github.com/OpenFOAM/OpenFOAM-dev/stargazers)
+- **License**: GPL-3.0
+- **Category**: Computational Fluid Dynamics (CFD)
+- **Overview**: Premier open-source CFD solver framework offering customization for complex fluid dynamics, chemical reactions, heat transfer, and multiphysics modeling.
+
+### 10. [Gazebo Sim](https://github.com/gazebosim/gz-sim) [![Stars](https://img.shields.io/github/stars/gazebosim/gz-sim?style=social&color=white)](https://github.com/gazebosim/gz-sim/stargazers)
+- **License**: Apache-2.0
+- **Category**: Robotics & ROS Simulation
+- **Overview**: Next-generation Gazebo robotics simulator. Supports multiple physics engines (ODE, Bullet, DART, SimBody) and native integration with ROS / ROS 2.
+
+### 11. [PDAL](https://github.com/PDAL/PDAL) [![Stars](https://img.shields.io/github/stars/PDAL/PDAL?style=social&color=white)](https://github.com/PDAL/PDAL/stargazers)
+- **License**: BSD-3-Clause
+- **Category**: Spatial Point Cloud Data Abstraction
+- **Overview**: Point Data Abstraction Library (PDAL) — the spatial point cloud equivalent of GDAL for translating, filtering, and processing 3D LiDAR data.
+
+### 12. [NetLogo](https://github.com/NetLogo/NetLogo) [![Stars](https://img.shields.io/github/stars/NetLogo/NetLogo?style=social&color=white)](https://github.com/NetLogo/NetLogo/stargazers)
+- **License**: GPL-2.0
+- **Category**: Agent-Based Spatial Environment
+- **Overview**: Programmable modeling environment for simulating natural and social spatial phenomena, widely used in research and multi-agent systems modeling.
+
+### 13. [FlightGear](https://github.com/FlightGear/flightgear) [![Stars](https://img.shields.io/github/stars/FlightGear/flightgear?style=social&color=white)](https://github.com/FlightGear/flightgear/stargazers)
+- **License**: GPL-2.0
+- **Category**: Flight & Atmospheric Simulator
+- **Overview**: Advanced open-source flight simulator framework providing multi-display capability, PX4 flight controller integration, and world terrain rendering.
+
+### 14. [AWSIM](https://github.com/autowarefoundation/AWSIM) [![Stars](https://img.shields.io/github/stars/autowarefoundation/AWSIM?style=social&color=white)](https://github.com/autowarefoundation/AWSIM/stargazers)
+- **License**: Apache-2.0
+- **Category**: Autoware Autonomous Driving Simulator
+- **Overview**: Unity-based digital twin simulator created by TIER IV for Autoware autonomous driving integration with native ROS 2 message streaming.
+
+### 15. [MATSim](https://github.com/matsim-org/matsim-libs) [![Stars](https://img.shields.io/github/stars/matsim-org/matsim-libs?style=social&color=white)](https://github.com/matsim-org/matsim-libs/stargazers)
+- **License**: GPL-2.0
+- **Category**: Agent-Based Transport Simulation
+- **Overview**: Multi-Agent Transport Simulation framework designed for large-scale mobility, traffic demand, and public transit network modeling.
+
+### 16. [OpenCourant](https://github.com/OpenCourant/OpenCourant) [![Stars](https://img.shields.io/github/stars/OpenCourant/OpenCourant?style=social&color=white)](https://github.com/OpenCourant/OpenCourant/stargazers)
+- **License**: AGPL-3.0
+- **Category**: Finite Element Analysis (FEA)
+- **Overview**: Community fork of OpenRadioss for explicit finite element analysis (FEA), simulating dynamic impacts, structural crashes, and dynamic loading.
+
+### 17. [City of Light (COL)](https://github.com/iliassarbout/CityOfLight) [![Stars](https://img.shields.io/github/stars/iliassarbout/CityOfLight?style=social&color=white)](https://github.com/iliassarbout/CityOfLight/stargazers)
+- **License**: MIT
+- **Category**: City-Scale Urban Embodied AI Simulator
+- **Overview**: Unity-based digital twin of Paris (~116 km²) delivering high-throughput (~1300 FPS) multi-modal sensor streams (RGB, depth, normals, semantics) for AI research.
+
+### 18. [MuPIF](https://github.com/mupif/mupif) [![Stars](https://img.shields.io/github/stars/mupif/mupif?style=social&color=white)](https://github.com/mupif/mupif/stargazers)
+- **License**: LGPL-3.0
+- **Category**: Distributed Multiphysics Workflows
+- **Overview**: Modular, distributed integration platform for creating multi-scale multiphysics workflows and digital twin representations.
+
+### 19. [VILLASnode](https://github.com/VILLASframework/villas-node) [![Stars](https://img.shields.io/github/stars/VILLASframework/villas-node?style=social&color=white)](https://github.com/VILLASframework/villas-node/stargazers)
+- **License**: Apache-2.0
+- **Category**: Real-Time Co-Simulation Gateway
+- **Overview**: Real-time multi-protocol gateway enabling geographically distributed co-simulation across heterogeneous simulation models.
+
+### 20. [Concordia Simulation Builder](https://github.com/ngstcf/concordia-sim-builder) [![Stars](https://img.shields.io/github/stars/ngstcf/concordia-sim-builder?style=social&color=white)](https://github.com/ngstcf/concordia-sim-builder/stargazers)
+- **License**: Apache-2.0
+- **Category**: Generative Agent Social Simulation
+- **Overview**: No-code web interface for Google DeepMind's Concordia framework, enabling LLM-driven multi-agent social simulations.
+
+---
+
+## Framework Integration & Architecture Patterns
+
+Building custom large-scale spatial simulation architectures typically requires hybrid composition:
+- **Urban & Traffic Layer**: Combine **City of Light (COL)** or **Eclipse SUMO** for high-throughput traffic and city-scale multi-sensor observations.
+- **Robotics & Vehicle Layer**: Deploy **CARLA** or **Gazebo** for hardware-in-the-loop and ROS 2 autonomous navigation benchmarking.
+- **Generative Social Dynamics**: Utilize **Concordia Simulation Builder** or **Mesa** for LLM-based behavioral agent interaction.
+- **Physics & Co-Simulation**: Interconnect solver engines using **MuPIF** or **VILLASframework** for distributed real-time multi-node execution.
+- **3D Geospatial Visualization**: Stream spatial entity outputs using **CesiumJS** or **Potree** for browser-based 3D Tiles rendering.
+
+---
 
 ## How to Contribute
 
+Contributions are welcome! Please follow these simple guidelines:
+1. Fork the repository.
+2. Edit `README.md` maintaining clean Markdown tables and shields.io star badges.
+3. Ensure entries include official documentation/repository links, factual descriptions, pricing/licensing details, and primary use cases.
+4. Submit a Pull Request with a brief summary of additions or updates.
 
+---
 
-1. Fork the repo.
+## Disclaimer & License Notes
 
-2. Add/edit entries in `README.md` (follow existing format).
-
-3. Include: name, link, 1–2 sentence description, and whether it's SaaS or open-source.
-
-4. Submit PR with a short explanation.
-
-
-
-Star the repo if you find it useful!
-
-
-
-## Disclaimer
-
-
-
-- This is a **community-curated** list — not exhaustive and not an endorsement.
-
-- Large-scale spatial simulation platforms handle computationally intensive workloads and may process sensitive geospatial data. Self-hosted solutions require proper security hardening, access controls, and compliance with data privacy regulations.
-
-- **AWS SimSpace Weaver ended support May 20, 2026** — migrate containerized simulations to AWS Batch for execution infrastructure .
-
-- **Gazebo rendering is less advanced than Unreal Engine or Unity** — suitable for robotics testing but not high-fidelity visualization . **CARLA and COL provide higher-fidelity visuals** at higher computational cost.
-
-- **Commercial solvers converge faster than open-source alternatives** — OpenFOAM requires expert tuning to achieve comparable stability, though it offers unrivaled customization .
-
-- **License considerations**: Gazebo uses Apache-2.0 , CARLA uses MIT , Concordia Simulation Builder uses Apache-2.0 , MuPIF uses LGPLv3 , OpenFOAM uses GPL-3.0 , and OpenCourant uses GNU AGPLv3 . Verify licensing against your use case before committing.
-
-- The open-source ecosystem provides strong urban simulation, robotics testing, and multiphysics foundations, but **managed infrastructure, global scale, and vendor-supported SLAs** remain primarily commercial offerings.
+- **Community Listing**: This list is community-curated for informational and research purposes.
+- **Infrastructure Migration**: AWS SimSpace Weaver ended support on May 20, 2026. Users should migrate containerized workloads to AWS Batch.
+- **Performance Trade-offs**: Open-source solvers (e.g. OpenFOAM) provide unmatched customization but require expert tuning to match commercial solver stability. High-fidelity rendering (CARLA, Unreal Engine) demands dedicated GPU hardware.
